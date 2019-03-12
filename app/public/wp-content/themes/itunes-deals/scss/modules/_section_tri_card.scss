@@ -10,6 +10,7 @@
 	.wrap {
 		flex-flow: row;
 		padding: 50px 20px;
+		min-height: 75vh;
 		@include mq(small, min) {
 			padding: 50px 0;
 			display: flex;
@@ -42,32 +43,62 @@
 		align-items: center;
 		@include mq(small, min) {
 			width: 50%;
-		}
-		@include mq(med, min) {
 			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
 		}
-	}
-	.card_slot {
-		box-shadow: 0 0 16px 0 hsla(0,0%,84%,.5);
-		padding: 30px 50px;
-		margin: 20px auto;
-		background: #fff;
-		display: block;
-		color: $main-font-color;
-		cursor: pointer;
-		@include mq(small, min) {
-			width: 90%;
-		}
-		&:hover {
-			text-decoration: none;
-			transition: all .3s cubic-bezier(.25,.46,.45,.94) 0s;
-			transform: translateY(-10px);
-			box-shadow: 0 2px 22px 0 hsla(0,0%,83%,.8);
-		}
-		.card_column {
-			@include mq(small, med) {
-				width: 50%;
-			}
-		}
+
 	}
 }
+
+.card_slot {
+	box-shadow: 0 0 16px 0 hsla(0,0%,84%,.5);
+	padding: 30px 50px;
+	margin: 10px auto;
+	background: #000;
+	display: block;
+	color: #fff;
+	cursor: pointer;
+	text-align: center;
+	span {
+		display: block;
+	}
+	@include mq(small, min) {
+		width: 45%;
+	}
+	@include mq(med, min) {
+		width: 31%;
+	}
+	&:hover {
+		text-decoration: none;
+		color: #fff;
+		transition: all .3s cubic-bezier(.25,.46,.45,.94) 0s;
+		transform: translateY(-10px);
+		box-shadow: 0 2px 22px 0 hsla(0,0%,83%,.8);
+	}	
+}
+
+
+
+.tri_card_section .btn_4-99 {
+	background: $4_99;
+}
+
+.tri_card_section .btn_6-99 {
+	background: $6_99;
+}
+
+.tri_card_section .btn_9-99 {
+	background: $9_99;
+}
+
+.tri_card_section .btn_12-99 {
+	background: $12_99;
+}
+
+.tri_card_section .btn_14-99 {
+	background: $14_99;
+}
+
+
+

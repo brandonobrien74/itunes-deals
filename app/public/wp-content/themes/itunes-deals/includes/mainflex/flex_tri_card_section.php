@@ -29,19 +29,24 @@ endif;
 		</div>
 		
 		<div class="card_holder">
-			<div class="card_column">
-				<a href="<?php echo $cardOneLink; ?>" class="card_slot">
-					<?php echo $cardOne; ?>
-				</a>
-			</div>
-			<div class="card_column">
-				<a href="<?php echo $cardTwoLink; ?>" class="card_slot">
-					<?php echo $cardTwo; ?>
-				</a>
-				<a href="<?php echo $cardThreeLink; ?>" class="card_slot">
-					<?php echo $cardThree; ?>
-				</a>
-			</div>
+			<a href="#" class="card_slot btn_4-99">
+				<span>$4.99</span> Deals
+			</a>
+			<a href="#" class="card_slot btn_6-99">
+				<span>$6.99</span> Deals
+			</a>
+			<a href="#" class="card_slot btn_9-99">
+				<span>$9.99</span> Deals
+			</a>
+			<a href="#" class="card_slot btn_12-99">
+				<span>$12.99</span> Deals
+			</a>
+			<a href="#" class="card_slot btn_14-99">
+				<span>$14.99</span> Deals
+			</a>
+			<a href="#" class="card_slot">
+				<span>Past</span> Deals
+			</a>
 		</div>
 		
 	</div>
