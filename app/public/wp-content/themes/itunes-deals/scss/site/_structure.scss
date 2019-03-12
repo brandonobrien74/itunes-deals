@@ -1,0 +1,84 @@
+// _structure.scss
+
+.wrap {
+	margin:0 auto;
+	max-width: 1200px;
+	@include mq(med, min) {
+		padding:0;
+		margin:0 auto;
+	}
+}
+
+.site-inner {
+	clear:both;
+	word-wrap:break-word;
+	margin-top: 70px;
+}
+
+.five-sixths,
+.four-sixths,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fourths,
+.three-sixths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+	margin:0;
+	width:100%;
+	@include mq(small, min) {
+		float:left;
+		margin-left:2.5641025641026%;
+	}
+}
+
+.first {
+	clear:both;
+	margin-left:0;
+}
+
+.content-repeater .wrap {
+	margin:0 10px;
+}
+
+
+@include mq(small, min) {
+	.one-half,
+	.three-sixths,
+	.two-fourths {
+		width:48.717948717949%;
+	}
+	
+	.one-third,
+	.two-sixths {
+		width:31.623931623932%;
+	}
+	
+	.four-sixths,
+	.two-thirds {
+		width:65.811965811966%;
+	}
+	
+	.one-fourth {
+		width:23.076923076923%;
+	}
+	
+	.three-fourths {
+		width:74.358974358974%;
+	}
+	
+	.one-sixth {
+		width:14.529914529915%;
+	}
+	
+	.five-sixths {
+		width:82.905982905983%;
+	}
+	
+	.first {
+		clear:both;
+		margin-left:0;
+	}
+}

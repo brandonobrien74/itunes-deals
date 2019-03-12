@@ -1,0 +1,565 @@
+// *********************************************
+// Rem output with px fallback
+// *********************************************
+
+/**
+ * $size: Font-size to be converted from `px` to `rem`
+ * $base: Base font-size (Change its value as per your need)
+ * @return void
+ */
+ 
+@mixin font-size($value: 12) {
+  font-size: $value * 1px;
+  font-size: $value / 16 * 1rem;
+}
+
+// Mixin usage **************
+// @include font-size(24);
+// will output a font size of 1.5rem with 24px fallback
+
+// *********************************************
+// Centering
+// *********************************************
+
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+  position: absolute;
+  
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// Mixin usage **************
+// .foo {
+//   @include center(both);
+// }
+// .foo-parent {
+//   position: relative;
+// }
+
+// *********************************************
+// Clearfix
+// *********************************************
+
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// *********************************************
+// Clear after (not all clearfix need this also)
+// *********************************************
+
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// *********************************************
+// Column width with margin
+// *********************************************
+
+@mixin column-width($numberColumns: 3) {
+	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// *********************************************
+// Media Queries
+// *********************************************
+
+// Breakpoints
+$breakpoint-xsmall: 400px;
+$breakpoint-small: 768px;
+$breakpoint-med: 1024px;
+$breakpoint-large: 1200px;
+$breakpoint-xlarge: 1340px;
+
+@mixin mq($size, $type: max, $pixels: $breakpoint-xsmall) {
+
+  @if $size == 'xsmall' {
+    @media screen and ($type + -width: $breakpoint-xsmall) {
+        @content;
+    }
+  }
+  @else if $size == 'small' {
+    @media screen and ($type + -width: $breakpoint-small) {
+        @content;
+    }
+  }
+  @else if $size == 'med' {
+    @media screen and ($type + -width: $breakpoint-med) {
+        @content;
+    }
+  }
+ @else if $size == 'large' {
+    @media screen and ($type + -width: $breakpoint-large) {
+        @content;
+    }
+  }
+  @else if $size == 'xlarge' {
+    @media screen and ($type + -width: $breakpoint-xlarge) {
+        @content;
+    }
+  }
+  @else if $size == 'custom' {
+    @media screen and ($type + -width: $pixels + px) {
+     @content;
+    }
+  }
+  @else {
+    @content;
+  }
+}
+
+// Mixin usage **************
+//
+// .foo {
+// 	@include mq(large) {
+// 	  width: 20%;
+// 	}
+// 	@include mq(med, max) {
+// 	  width: 40%;
+// 	}
+// 	@include mq(med-small, min) {
+// 	  width: 60%;
+// 	}
+// 	@include mq(small) {
+// 	  width: 80%;
+// 	}
+// 	@include mq(custom, max, 400) {
+// 	  width: 100%;
+// 	}
+// }
+
+// *********************************************
+// Animation
+// *********************************************
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }  
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }  
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+@mixin animation($str) {
+-webkit-animation: #{$str};
+-moz-animation: #{$str};
+-ms-animation: #{$str};
+-o-animation: #{$str};
+animation: #{$str};      
+}
+
+// Mixin usage **************
+// // Define animation name, and properties
+// @include keyframes(fade-out) {
+// 0% { opacity: 1; }
+// 90% { opacity: 0; }
+// }
+// // Add animation to element
+// .element {
+// width: 100px;
+// height: 100px;
+// background: black;
+// @include animation('fade-out 5s 3');
+
+
+// *********************************************
+// Animation
+// *********************************************
+
+@mixin background-gradient($start-color, $end-color, $orientation) { 
+  background: $start-color;
+
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+// Mixin usage **************
+// //$start-color, $end-color, $orientation - vertical/horizontal/radial
+// .foo {
+//   @include background-gradient(red, black, 'vertical');
+// }
+// //Output
+// .foo {
+//   background: -webkit-linear-gradient(top, red, black);
+//   background: linear-gradient(to bottom, red, black);
+// }
+
+// *********************************************
+// Transitions
+// *********************************************
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Mixin usage **************
+// a {
+//   color: gray;
+//   @include transition(color .3s ease);
+//   &:hover {
+//     color: black;
+//   }
+// }
+
+// *********************************************
+// Visually hide an element
+// *********************************************
+
+// When you hide an element with display: none, that prevents screen 
+// readers from reading it to the user. Sometimes that’s fine, 
+// but in other cases this will make the site hard to use for 
+// people with screen readers. Thus, we have to use another technique
+//  for hiding elements while at the same time make them accessible.
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// Mixin usage **************
+// <button class="mobile-navigation-trigger">
+//   <b class="visually-hidden">Open the navigation</b>
+//   <img src="img/mobile-navigation-icon.svg">
+// </button>
+//
+// .visually-hidden {
+//   @extend %visuallyhidden;
+// }
+
+// Hide from both screen readers and browsers
+@mixin hidden {
+	display: none;
+	visibility: hidden;
+}
+
+// *********************************************
+// Pseudo Elements
+// *********************************************
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// Mixin usage **************
+// div::after {
+//   @include pseudo;
+//   top: -1rem; 
+//   left: -1rem;
+//   width: 1rem;
+//   height: 1rem;
+// }
+
+// Vendor Prefixes
+//
+// All vendor mixins are deprecated as of v3.2.0 due to the introduction of
+// Autoprefixer in our Gruntfile. They have been removed in v4.
+
+// - Animations
+// - Backface visibility
+// - Box shadow
+// - Box sizing
+// - Content columns
+// - Hyphens
+// - Placeholder text
+// - Transformations
+// - Transitions
+// - User Select
+
+
+// Animations
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+       -o-animation: $animation;
+          animation: $animation;
+}
+@mixin animation-name($name) {
+  -webkit-animation-name: $name;
+          animation-name: $name;
+}
+@mixin animation-duration($duration) {
+  -webkit-animation-duration: $duration;
+          animation-duration: $duration;
+}
+@mixin animation-timing-function($timing-function) {
+  -webkit-animation-timing-function: $timing-function;
+          animation-timing-function: $timing-function;
+}
+@mixin animation-delay($delay) {
+  -webkit-animation-delay: $delay;
+          animation-delay: $delay;
+}
+@mixin animation-iteration-count($iteration-count) {
+  -webkit-animation-iteration-count: $iteration-count;
+          animation-iteration-count: $iteration-count;
+}
+@mixin animation-direction($direction) {
+  -webkit-animation-direction: $direction;
+          animation-direction: $direction;
+}
+@mixin animation-fill-mode($fill-mode) {
+  -webkit-animation-fill-mode: $fill-mode;
+          animation-fill-mode: $fill-mode;
+}
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden`
+
+@mixin backface-visibility($visibility) {
+  -webkit-backface-visibility: $visibility;
+     -moz-backface-visibility: $visibility;
+          backface-visibility: $visibility;
+}
+
+// Drop shadows
+//
+// Note: Deprecated `.box-shadow()` as of v3.1.0 since all of Bootstrap's
+// supported browsers that have box shadow capabilities now support it.
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+
+// CSS3 Content Columns
+@mixin content-columns($column-count, $column-gap: $grid-gutter-width) {
+  -webkit-column-count: $column-count;
+     -moz-column-count: $column-count;
+          column-count: $column-count;
+  -webkit-column-gap: $column-gap;
+     -moz-column-gap: $column-gap;
+          column-gap: $column-gap;
+}
+
+// Optional hyphenation
+@mixin hyphens($mode: auto) {
+  word-wrap: break-word;
+  -webkit-hyphens: $mode;
+     -moz-hyphens: $mode;
+      -ms-hyphens: $mode; // IE10+
+       -o-hyphens: $mode;
+          hyphens: $mode;
+}
+
+// Placeholder text
+@mixin placeholder($color: $input-color-placeholder) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+// Transformations
+@mixin scale($ratio...) {
+  -webkit-transform: scale($ratio);
+      -ms-transform: scale($ratio); // IE9 only
+       -o-transform: scale($ratio);
+          transform: scale($ratio);
+}
+
+@mixin scaleX($ratio) {
+  -webkit-transform: scaleX($ratio);
+      -ms-transform: scaleX($ratio); // IE9 only
+       -o-transform: scaleX($ratio);
+          transform: scaleX($ratio);
+}
+@mixin scaleY($ratio) {
+  -webkit-transform: scaleY($ratio);
+      -ms-transform: scaleY($ratio); // IE9 only
+       -o-transform: scaleY($ratio);
+          transform: scaleY($ratio);
+}
+@mixin skew($x, $y) {
+  -webkit-transform: skewX($x) skewY($y);
+      -ms-transform: skewX($x) skewY($y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
+       -o-transform: skewX($x) skewY($y);
+          transform: skewX($x) skewY($y);
+}
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+      -ms-transform: translate($x, $y); // IE9 only
+       -o-transform: translate($x, $y);
+          transform: translate($x, $y);
+}
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+          transform: translate3d($x, $y, $z);
+}
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+      -ms-transform: rotate($degrees); // IE9 only
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+@mixin rotateX($degrees) {
+  -webkit-transform: rotateX($degrees);
+      -ms-transform: rotateX($degrees); // IE9 only
+       -o-transform: rotateX($degrees);
+          transform: rotateX($degrees);
+}
+@mixin rotateY($degrees) {
+  -webkit-transform: rotateY($degrees);
+      -ms-transform: rotateY($degrees); // IE9 only
+       -o-transform: rotateY($degrees);
+          transform: rotateY($degrees);
+}
+@mixin perspective($perspective) {
+  -webkit-perspective: $perspective;
+     -moz-perspective: $perspective;
+          perspective: $perspective;
+}
+@mixin perspective-origin($perspective) {
+  -webkit-perspective-origin: $perspective;
+     -moz-perspective-origin: $perspective;
+          perspective-origin: $perspective;
+}
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+     -moz-transform-origin: $origin;
+      -ms-transform-origin: $origin; // IE9 only
+          transform-origin: $origin;
+}
+
+
+// Transitions
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+@mixin transition-property($transition-property...) {
+  -webkit-transition-property: $transition-property;
+          transition-property: $transition-property;
+}
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: $transition-delay;
+          transition-delay: $transition-delay;
+}
+@mixin transition-duration($transition-duration...) {
+  -webkit-transition-duration: $transition-duration;
+          transition-duration: $transition-duration;
+}
+@mixin transition-timing-function($timing-function) {
+  -webkit-transition-timing-function: $timing-function;
+          transition-timing-function: $timing-function;
+}
+@mixin transition-transform($transition...) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
+
+
+// User select
+// For selecting text on the page
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select; // IE10+
+          user-select: $select;
+}
+
+// Opacity
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}
+
+// *********************************************
+// Font Awesome Mixin
+// *********************************************
+
+@mixin fa-icon($icon, $color: black, $size: 16px) {
+	font-family: "Font Awesome 5 Free";
+  content: "#{$icon}";
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color;
+  font-size: $size;
+  position: relative;
+}
+
+// Mixin usage **************
+// div::before (or ::after) {
+//   @include fa-icon("\f2a3", red, 30px);
+// }
+
+// *********************************************
+// Backgrounds
+// *********************************************
+
+@mixin bg($url, $position) {
+  background: url($url) no-repeat $position; 
+}
+
+// Mixin usage **************
+// .randon-div {
+//   @include background('img/url.jpg', center);  
+//   background-size: cover;
+// }

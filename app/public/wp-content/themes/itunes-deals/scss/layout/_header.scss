@@ -1,0 +1,66 @@
+// _header.scss
+/*
+Site Header 
+---------------------------------------------------------------------------------------------------- */
+.site-header {
+	background-color:rgba(0,0,0,1);
+	width:100%;
+	position:fixed;
+	z-index:9999;
+	height:70px;
+	padding:7px 7px 7px 0;
+	@include mq(small, min) {
+		padding:7px;
+	}
+	.wrap {
+		max-width: 1200px;
+	}
+}
+
+/*
+Title Area 
+--------------------------------------------- */
+
+.title-area {
+	margin:0 auto;
+	max-width:30%;
+	padding:0;
+	z-index:99;
+	position:absolute;
+	@include mq(small, min) {
+		width:18%;
+	}
+	@include mq(med, min) {
+		padding:0;
+	}
+}
+
+.custom-logo {
+	padding-top:7px;
+	padding-left:10px;
+	max-width:90px;
+}
+
+.site-description {
+	margin-bottom:0;
+	display:none;
+	text-indent:-9999px;
+}
+
+.mobphone {
+	font-size:1.8rem;
+}
+
+
+@include mq(small, min) {
+
+	.site-header .widget-area {
+		display:none;
+	}
+
+}
+
+
+@include mq(med, min) {
+	padding:0;
+}

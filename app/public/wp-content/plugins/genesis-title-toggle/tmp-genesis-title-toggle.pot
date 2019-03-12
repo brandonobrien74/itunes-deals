@@ -1,0 +1,80 @@
+# Copyright (C) 2015 Genesis Title Toggle
+# This file is distributed under the same license as the Genesis Title Toggle package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Genesis Title Toggle 1.7.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/genesis-title-"
+"toggle\n"
+"POT-Creation-Date: 2015-10-13 16:15:10+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: genesis-title-toggle.php:96
+msgid ""
+"Sorry, you can&rsquo;t activate unless you have installed <a href=\"%s"
+"\">Genesis</a>"
+msgstr ""
+
+#: genesis-title-toggle.php:143
+msgid "Title Toggle"
+msgstr ""
+
+#: genesis-title-toggle.php:156
+msgid "By default, remove titles in the <strong>%s</strong> post type."
+msgstr ""
+
+#: genesis-title-toggle.php:208
+msgid "Show Title"
+msgstr ""
+
+#: genesis-title-toggle.php:212
+msgid ""
+"By default, this post type is set to remove titles. This checkbox lets you "
+"show this specific page&rsquo;s title."
+msgstr ""
+
+#: genesis-title-toggle.php:219
+msgid "Hide Title"
+msgstr ""
+
+#: genesis-title-toggle.php:223
+msgid ""
+"By default, this post type is set to display titles. This checkbox lets you "
+"hide this specific page&rsquo;s title."
+msgstr ""
+
+#: genesis-title-toggle.php:237
+msgid "h1 Site Title"
+msgstr ""
+
+#: genesis-title-toggle.php:239
+msgid ""
+"Make the site title in header an h1. This is HIGHLY recommended if you are "
+"removing the page title."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Genesis Title Toggle"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.billerickson.net/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Turn on/off page titles on a per page basis, and set sitewide defaults from "
+"Theme Settings. Must be using the Genesis theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Bill Erickson"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.billerickson.net"
+msgstr ""

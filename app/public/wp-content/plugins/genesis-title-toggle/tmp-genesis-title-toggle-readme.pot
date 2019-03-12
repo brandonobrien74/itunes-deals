@@ -1,0 +1,126 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Genesis Title Toggle"
+msgstr ""
+
+#. Short description.
+msgid "Turn on/off page titles on a per page basis, and set sitewide defaults from Theme Settings. Must be using the Genesis theme."
+msgstr ""
+
+#. Screenshot description.
+msgid "<p>The metabox that shows up on the Edit screen.</p>"
+msgstr ""
+
+#. Screenshot description.
+msgid "<p>The metabox that shows up on Genesis &gt; Theme Settings.</p>"
+msgstr ""
+
+#. Screenshot description.
+msgid "<p>If you check \"hide\" on Theme Settings, this metabox is displayed on the Edit screen.</p>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "This plugin lets you easily remove the page title from specific pages. Don't want \"Home\" at the top of your homepage? Activate, then edit the homepage and check \"Hide\"."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can also set sitewide defaults. If you don't want page titles on any pages, go to Genesis &gt; Theme Settings &gt; Title Toggle and check the appropriate box. Once a post type has the default set to remove, when editing a page you can selectively turn on that page's title."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Finally, if you're comfortable with code you can use the <code>be_title_toggle_post_types</code> filter to change the post types this applies to (it only applies to pages by default)."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"https://github.com/billerickson/Genesis-Title-Toggle/issues\">Support Forum</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "<p>Upload the <code>genesis-title-toggle</code> folder to your <code>/wp-content/plugins/</code> directory</p>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "<p>Activate the \"Genesis Title Toggle\" plugin in your WordPress administration interface</p>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "<p>When editing a page, go down to the Title Toggle metabox and check \"hide\" to hide that page's title.</p>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "<p>(Optional) Go to Genesis &gt; Theme Settings &gt; Title Toggle to remove titles on all pages by default.</p>"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Upload the <code>genesis-title-toggle</code> folder to your <code>/wp-content/plugins/</code> directory"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "Activate the \"Genesis Title Toggle\" plugin in your WordPress administration interface"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "When editing a page, go down to the Title Toggle metabox and check \"hide\" to hide that page's title."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "(Optional) Go to Genesis &gt; Theme Settings &gt; Title Toggle to remove titles on all pages by default."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added option to make site title an h1 when editing homepage. More information: http://www.billerickson.net/genesis-h1-front-page/"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix issue when you have all titles disabled by default"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix issue with HTML5 themes using post formats"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated the metabox code to prevent conflicts with other plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "General refresh of the code to make it cleaner and easier to read"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Add HTML5 Support for Genesis 2.0"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated to work with all StudioPress themes with post formats"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated the metabox library to latest version"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "The fix in 1.2.2 didn't make it for some reason, so re-patching it."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Minor modification to the way it detects Genesis. Upgrading is only necessary if you're using Premise"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Typo in 1.2 caused the plugin to crash. I'm so sorry!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fixed an issue where if you weren't running Genesis, site breaks (ex: WP Touch changes themes when on mobile device)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added support for localization and a German language pack. Thanks David Decker."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Initial release"
+msgstr ""

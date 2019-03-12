@@ -1,0 +1,72 @@
+// _accordion.scss
+
+/* 
+SECTION - Accordion 
+---------------------------------------- */
+
+.accordion_repeater .wrap {
+	position: relative;
+	width: 90%;
+	max-width: 1200px;
+	margin: 50px auto;
+}
+
+
+.accordion {
+	background-color:#eee;
+	cursor:pointer;
+	padding:0;
+	width:100%;
+	text-align:left;
+	border:none;
+	outline:none;
+	transition:.4s;
+	padding: 10px;
+	position: relative;
+	border-bottom: 2px solid #ddd;
+}
+
+.accordion.active,button.accordion:hover {
+	background-color:#ddd;
+}
+
+div.panel {
+	padding:0 20px;
+	background-color:#fff;
+	max-height:0;
+	overflow:hidden;
+	transition:max-height .2s ease-out;
+	border:2px solid #ddd;
+	border-top:none;
+}
+
+div.panel.active {
+	border-color:#ccc;
+	padding:40px 20px;
+}
+
+.accordion_plus {
+	display:inline-block;
+	font-size:0;
+	vertical-align:sub;
+	padding:7px 10px;
+	color:#fff;
+	background-color:#ff6347;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.accordion_plus .fa {
+	font-size:28px;
+}
+
+.panel ul {
+	margin:0;
+}
+
+.panel ul>li {
+	list-style-type:none;
+	margin:0;
+}
+

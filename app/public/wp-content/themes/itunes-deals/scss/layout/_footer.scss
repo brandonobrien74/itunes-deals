@@ -1,0 +1,89 @@
+// _footer.scss
+
+.site-footer {
+	background: darken( $main-font-color, 10% );
+	color:#fefefe;
+	
+	line-height:1;
+	padding:25px 0;
+	text-align:center;
+	p { 
+		margin-bottom:0;
+		font-size:0.8rem;
+	}	
+	
+	@include mq(small, min) {
+		
+		.footer-widgets .wrap {
+			margin:0 5%;
+		}
+		
+	}
+}
+
+.footer_content {
+	background: $main-font-color;
+	color: #ffffff;
+	padding: 20px 0;
+	vertical-align: top;
+	font-size:0.8rem;
+	.wrap {
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+}
+
+.footer_col {
+	vertical-align: top;
+	padding: 10px;
+	text-align: center;
+	strong {
+		color: $primary-color;
+		display: block;
+	}
+	a {
+		text-decoration: none;
+		&:hover {
+			color: lighten( $primary-color, 10% );
+			text-decoration: underline;
+		}
+	}
+	@include mq(small, min) {
+		width: 33%;
+		display: inline-block;		
+		text-align: left;
+	}
+	@include mq(med, min) {
+		width: 19%;
+	}
+}
+
+.social_links {
+	span {
+		font-size: 1.8rem;
+		padding: 5px;
+		margin-bottom: 10px;
+		outline: 0;
+		border: 0;
+	}
+	a:hover {
+		color: lighten( $primary-color, 10% );
+	}
+}
+
+@include mq(med, min) {
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3 {
+		width:300px;
+	}
+	
+	.footer-widgets-1 {
+		margin-right:30px;
+	}
+	
+	.footer-widgets-1,
+	.footer-widgets-2 {
+		margin:0 auto;
+	}
+}

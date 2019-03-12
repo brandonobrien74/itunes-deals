@@ -1,0 +1,73 @@
+// _section_tri_card.scss
+
+.tri_card_section {
+    background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom;
+	@include mq(small, min) {
+		background-position: right;
+	}
+	.wrap {
+		flex-flow: row;
+		padding: 50px 20px;
+		@include mq(small, min) {
+			padding: 50px 0;
+			display: flex;
+		}
+	}
+	.tri_content_block {
+		@include mq(small, min) {
+			padding: 20px;
+		}
+		strong {
+			font-size: 2.5rem;
+		}
+	}
+	.v_aligntop {
+		align-items: flex-start;
+	}
+	.v_alignmiddle {
+		align-items: center;
+	}
+	.v_alignbottom {
+		align-items: flex-end;
+	}
+	.tri_content_block {
+		@include mq(small, min) {
+			width: 50%;
+			padding-right: 40px;
+		}
+	}
+	.card_holder {
+		align-items: center;
+		@include mq(small, min) {
+			width: 50%;
+		}
+		@include mq(med, min) {
+			display: flex;
+		}
+	}
+	.card_slot {
+		box-shadow: 0 0 16px 0 hsla(0,0%,84%,.5);
+		padding: 30px 50px;
+		margin: 20px auto;
+		background: #fff;
+		display: block;
+		color: $main-font-color;
+		cursor: pointer;
+		@include mq(small, min) {
+			width: 90%;
+		}
+		&:hover {
+			text-decoration: none;
+			transition: all .3s cubic-bezier(.25,.46,.45,.94) 0s;
+			transform: translateY(-10px);
+			box-shadow: 0 2px 22px 0 hsla(0,0%,83%,.8);
+		}
+		.card_column {
+			@include mq(small, med) {
+				width: 50%;
+			}
+		}
+	}
+}

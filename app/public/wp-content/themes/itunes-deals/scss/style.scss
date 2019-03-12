@@ -1,0 +1,29 @@
+/*!
+Theme Name: iTunes Deals
+Theme URI: https://itunesdeals.ca/
+Description: This is the RankHigher Theme based on the Genesis Framework.
+Author: RankHigher
+Author URI: https://www.studiopress.com/
+Text Domain: rankhigher-theme
+Version: 2.2.3
+Template: genesis
+Template Version: 2.2.3
+License: GPL-2.0+
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what
+you've learned with others.
+
+*/
+
+
+@import "utilities/index";
+
+@import "site/index";
+
+@import "layout/index";
+
+@import "modules/index";
+
+@import "mediaprint";

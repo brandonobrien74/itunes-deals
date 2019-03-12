@@ -1,0 +1,17 @@
+.sticky_mobile_buttons {
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     padding-bottom: 15px;
+     @include mq(small, min) {
+          display: none;
+     }
+     span {
+          background: purple;
+          padding: 20px;
+          border-radius: 50%;
+     }
+}

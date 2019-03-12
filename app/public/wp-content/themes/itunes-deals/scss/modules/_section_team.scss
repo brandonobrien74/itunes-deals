@@ -1,0 +1,85 @@
+// _section_team.scss
+
+.team_section {
+	background: #E6EEF2;
+	padding-top: 40px;
+}
+
+.team_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 40px auto;
+    width: 100%;
+    a {
+	    position: relative;
+	    padding: 30px;
+	    flex: 1 0 30%;
+	    margin: 5px;
+	    height: 296px;
+	    max-width: 280px;
+	    text-align: center;
+	    line-height: 1;
+	    justify-content: center;
+	    display: flex;
+	    align-items: center;
+	    flex-flow: column;
+	    color: #fff;
+	    text-decoration: none;
+	    @include mq(small, min) {
+		     flex: 1 0 21%;
+		}
+	    .overlay_team {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 2;
+		    &:hover {
+			    background: #758F9C;
+			    opacity: 0.5;
+		    }
+	    }
+	    img {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    object-fit: cover;
+		}
+		strong {
+			position: relative;
+			z-index: 5;
+			pointer-events: none;
+		}
+	}
+}
+
+.team {
+	margin: 0 auto;
+	max-width: 1180px;
+	padding: 0 50px;
+	.entry-header {
+		display: none;
+	}
+	h1 {
+		margin-top: 0;
+	}
+	img {
+		vertical-align: top;
+		@include mq(small, min) {
+			float: left;
+			display: inline-block;
+		    width: 30%;
+		}
+	}
+	.entry-content {
+		vertical-align: top;
+		@include mq(small, min) {
+			float: left;
+			display: inline-block;
+		    width: 60%;
+		}
+	}
+}

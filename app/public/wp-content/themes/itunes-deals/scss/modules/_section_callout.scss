@@ -1,0 +1,28 @@
+// _callout.scss
+
+/* 
+SECTION - Callout Box 
+---------------------------------------- */
+.callout_box {
+	background-color:$callout-background;
+}
+
+.calloutcontent {
+	text-align:center;
+	padding:75px 30px;
+	font-size:24px;
+	line-height:1.25;
+	clear:both;
+	.wrap {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	@include mq(small, min) {
+		padding:150px 100px;
+	}
+}
+
+.calloutcontent p {
+	margin:0 auto;
+	max-width:1000px;
+}

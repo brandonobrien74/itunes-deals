@@ -1,0 +1,72 @@
+// _hero.scss
+
+/* 
+SECTION - Hero Layout 
+---------------------------------------- */
+.herolayout {
+	background-size:cover;
+	background-position:center;
+	display: flex;
+    width: 100%;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    flex-flow: column;
+}
+
+.hero_size_half {
+	min-height:50vh;
+}
+
+.hero_size_full {
+	height:100vh;
+	@include mq(med, min) {
+		min-height: calc(100vh - 70px);
+	    height: calc(100vh - 70px);
+	}
+}
+
+.hero_center,.hero_left,.hero_right {
+	display:flex;
+	flex-direction:column;
+	margin:auto;
+	max-width: 1200px;
+}
+
+.hero_parallax {
+	background-size:cover;
+	@include mq(med, min) {
+		background-attachment:fixed;
+	}
+}
+
+.herovideo iframe {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	height:100vh;
+	pointer-events:none;
+	min-width:100vw;
+	min-height:100%;
+	width:179vw;
+}
+
+
+.herovideo {
+	@include mq(med, min) {
+		height:65vh;
+	}
+	@include mq(large, min) {
+		height:86vh;
+		overflow:hidden;
+	}
+	@include mq(xlarge, min) {
+		height:95vh;
+	}
+}
+	
+	
